@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Linha S.O.S Crescimento: tratamento capilar profissional para reduzir queda, estimular crescimento e aumentar volume. Fale no WhatsApp e garanta 25% OFF." />
+  <title>S.O.S Crescimento | 25% OFF | WhatsApp</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="S.O.S Crescimento | 25% OFF" />
+  <meta property="og:description" content="Menos queda, mais crescimento e volume. Atendimento rápido no WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <style>
+    :root{
+      --bg:#0b0b10;
+      --card:#12121a;
+      --soft:#171725;
+      --text:#f4f4f7;
+      --muted:#b8b8c7;
+      --brand:#c0353d;
+      --brand2:#7a1f24;
+      --ok:#45d483;
+      --line:rgba(255,255,255,.10);
+      --shadow: 0 14px 60px rgba(0,0,0,.55);
+      --radius: 18px;
+      --radius2: 24px;
+      --max: 1120px;
+      --ring: 0 0 0 4px rgba(192,53,61,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(900px 480px at 15% 0%, rgba(192,53,61,.25), transparent 60%),
+        radial-gradient(900px 520px at 85% 10%, rgba(122,31,36,.20), transparent 55%),
+        radial-gradient(1000px 700px at 50% 90%, rgba(255,255,255,.06), transparent 60%),
+        var(--bg);
+      line-height:1.45;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:10px 14px; border:1px solid var(--line);
+      background: rgba(18,18,26,.72);
+      backdrop-filter: blur(10px);
+      border-radius: 999px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      background: rgba(69,212,131,.12);
+      border: 1px solid rgba(69,212,131,.25);
+      color: #bff3d4;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .dot{width:8px;height:8px;border-radius:999px;background:var(--ok);box-shadow:0 0 0 4px rgba(69,212,131,.18)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      text-decoration:none;
+      font-weight:700;
+      letter-spacing:.2px;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      cursor:pointer;
+    }
+    .btn:focus{outline:none; box-shadow: var(--ring)}
+    .btn:hover{transform: translateY(-1px)}
+    .btn-primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      border-color: rgba(255,255,255,.10);
+      box-shadow: 0 18px 60px rgba(192,53,61,.25);
+    }
+    .btn-primary:hover{box-shadow: 0 24px 80px rgba(192,53,61,.33)}
+    .btn-ghost{
+      background: rgba(255,255,255,.05);
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 24px;
+      margin-top: 22px;
+      align-items: stretch;
+    }
+    @media (max-width: 920px){
+      .hero{grid-template-columns:1fr; }
+    }
+
+    .card{
+      background: rgba(18,18,26,.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-inner{padding:26px}
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(192,53,61,.12);
+      border: 1px solid rgba(192,53,61,.22);
+      color: #ffd8da;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing:.2px;
+    }
+    h1{
+      margin:14px 0 12px;
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height:1.08;
+      letter-spacing: -.5px;
+    }
+    .lead{
+      color: var(--muted);
+      font-size: 16.5px;
+      margin: 0 0 18px;
+      max-width: 62ch;
+    }
+    .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 18px}
+    .pill{
+      display:inline-flex; align-items:center; gap:9px;
+      padding: 10px 12px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #e9e9f1;
+      font-size: 13.5px;
+      white-space: nowrap;
+    }
+    .check{
+      width:18px;height:18px;border-radius:6px;
+      display:inline-flex;align-items:center;justify-content:center;
+      background: rgba(69,212,131,.14);
+      border: 1px solid rgba(69,212,131,.25);
+      flex: 0 0 auto;
+    }
+    .check svg{width:12px;height:12px;fill:#bff3d4}
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top: 16px}
+    .subnote{
+      margin-top: 10px;
+      color: rgba(244,244,247,.72);
+      font-size: 13px;
+    }
+
+    .promo{
+      margin-top: 14px;
+      display:flex; gap:12px; flex-wrap:wrap; align-items:center;
+    }
+    .promo .tag{
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      border-radius: 14px;
+      color: rgba(244,244,247,.86);
+      font-weight: 650;
+      letter-spacing:.2px;
+    }
+    .promo .off{
+      background: linear-gradient(135deg, rgba(69,212,131,.18), rgba(69,212,131,.08));
+      border: 1px solid rgba(69,212,131,.25);
+      color: #d3ffe5;
+    }
+
+    .side{
+      display:flex; flex-direction:column; gap:14px;
+      height:100%;
+    }
+    .side .mini{
+      background: rgba(18,18,26,.68);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+    .side h3{margin:0 0 10px; font-size: 16px}
+    .list{margin:0; padding:0; list-style:none; display:grid; gap:10px}
+    .li{
+      display:flex; gap:10px; align-items:flex-start;
+      color: rgba(244,244,247,.86);
+      font-size: 14.5px;
+    }
+    .li small{display:block; color: var(--muted); margin-top:2px}
+    .ico{
+      width:38px; height:38px; border-radius: 14px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(192,53,61,.12);
+      border: 1px solid rgba(192,53,61,.22);
+      flex: 0 0 auto;
+    }
+    .ico svg{width:18px;height:18px;fill:#ffd8da}
+
+    .section{
+      margin-top: 22px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .grid3{
+      display:grid; gap:16px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 980px){
+      .grid3{grid-template-columns:1fr}
+    }
+    .box{
+      background: rgba(18,18,26,.55);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+    .box h4{margin:0 0 8px; font-size: 15px}
+    .box p{margin:0; color: var(--muted); font-size: 14.5px}
+
+    .proof{
+      display:grid; gap:16px;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: start;
+    }
+    @media (max-width: 980px){ .proof{grid-template-columns:1fr} }
+
+    .faq details{
+      background: rgba(18,18,26,.55);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px 16px;
+    }
+    .faq summary{
+      cursor:pointer;
+      font-weight: 700;
+      list-style:none;
+    }
+    .faq summary::-webkit-details-marker{display:none}
+    .faq p{margin:10px 0 0; color: var(--muted); font-size: 14.5px}
+    .footer{
+      margin: 26px 0 8px;
+      color: rgba(244,244,247,.56);
+      font-size: 12.5px;
+    }
+
+    .sticky{
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      display:none;
+      z-index: 30;
+    }
+    @media (max-width: 920px){
+      .sticky{display:block}
+      .sticky .bar{
+        max-width: var(--max);
+        margin: 0 auto;
+        background: rgba(18,18,26,.86);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 10px;
+        box-shadow: var(--shadow);
+        display:flex;
+        gap:10px;
+        align-items:center;
+        justify-content:space-between;
+      }
+      .sticky .bar span{color: rgba(244,244,247,.84); font-size: 13px}
+      .sticky .bar .btn{padding: 12px 14px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand" aria-label="Marca e atendimento">
+        <span style="display:inline-flex;align-items:center;gap:10px;">
+          <span style="width:38px;height:38px;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:inline-flex;align-items:center;justify-content:center;font-weight:900;">S.O.S</span>
+          <span>
+            <div style="font-size:14px;opacity:.92;">Linha Profissional</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:-2px;">Crescimento Capilar Feminino</div>
+          </span>
+        </span>
+      </div>
+      <div class="badge" title="Atendimento no WhatsApp">
+        <span class="dot" aria-hidden="true"></span>
+        Atendimento rápido no WhatsApp
+      </div>
+    </header>
+
+    <main class="hero" role="main">
+      <section class="card" aria-label="Oferta principal">
+        <div class="card-inner">
+          <span class="kicker">💖 Tratamento completo para queda e crescimento</span>
+          <h1>Menos queda, mais crescimento e volume para você se sentir ainda mais confiante ✨</h1>
+          <p class="lead">
+            A <strong>Linha S.O.S Crescimento</strong> foi criada para mulheres que buscam <strong>resultados reais</strong>:
+            fortalecimento, aumento da densidade capilar e equilíbrio do couro cabeludo sem ressecar os fios.
+          </p>
+
+          <div class="pillrow" aria-label="Benefícios em destaque">
+            <span class="pill">
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M9.2 16.6 4.9 12.3l1.4-1.4 2.9 2.9 8-8 1.4 1.4z"/></svg>
+              </span>
+              Reduz a queda em até <strong>95%</strong>
+            </span>
+            <span class="pill">
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M9.2 16.6 4.9 12.3l1.4-1.4 2.9 2.9 8-8 1.4 1.4z"/></svg>
+              </span>
+              Estimula <strong>novos fios</strong> mais fortes
+            </span>
+            <span class="pill">
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M9.2 16.6 4.9 12.3l1.4-1.4 2.9 2.9 8-8 1.4 1.4z"/></svg>
+              </span>
+              Aumenta <strong>volume</strong> e massa capilar
+            </span>
+            <span class="pill">
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M9.2 16.6 4.9 12.3l1.4-1.4 2.9 2.9 8-8 1.4 1.4z"/></svg>
+              </span>
+              Controla oleosidade sem ressecar
+            </span>
+          </div>
+
+          <div class="promo" aria-label="Condição especial">
+            <span class="tag off">🔥 <strong>25% OFF</strong> por tempo limitado</span>
+            <span class="tag">📦 Envio rápido (consulte disponibilidade)</span>
+            <span class="tag">💬 Suporte na escolha do kit</span>
+          </div>
+
+          <div class="ctaRow" aria-label="Chamadas para ação">
+            <a class="btn btn-primary" id="ctaTop" href="https://wa.me/558597004668?text=Oi%21%20Quero%20aproveitar%20os%2025%25%20OFF%20da%20Linha%20S.O.S%20Crescimento.%20Pode%20me%20ajudar%20a%20escolher%20o%20melhor%20kit%20para%20meu%20cabelo%3F" target="_blank" rel="noopener">
+              <span aria-hidden="true">📲</span>
+              Falar no WhatsApp e garantir 25% OFF
+            </a>
+            <a class="btn btn-ghost" href="#como-usar">
+              <span aria-hidden="true">🧴</span>
+              Ver como usar
+            </a>
+          </div>
+
+          <div class="subnote">
+            *Atendimento humano no WhatsApp. Você pode tirar dúvidas sobre queda, oleosidade, rotina e indicação do kit.
+          </div>
+        </div>
+      </section>
+
+      <aside class="side" aria-label="Destaques e composição do tratamento">
+        <div class="mini">
+          <h3>O que vem no tratamento</h3>
+          <ul class="list">
+            <li class="li">
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M9 2h6v2h-1v4.1c1.7.5 3 2 3 3.9v7.5c0 1.4-1.1 2.5-2.5 2.5h-5C8.1 24 7 22.9 7 21.5V14c0-1.9 1.3-3.4 3-3.9V4H9V2zm2 8.1c-1.1.2-2 .9-2 1.9v9.5c0 .3.2.5.5.5h5c.3 0 .5-.2.5-.5V12c0-1-.9-1.7-2-1.9V4h-2v6.1z"/></svg>
+              </span>
+              <div>
+                <strong>Shampoo estimulante</strong>
+                <small>Limpeza equilibrada e preparo do couro cabeludo.</small>
+              </div>
+            </li>
+            <li class="li">
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M7 2h10v3h-2V4H9v1H7V2zm-1 6h12l1 14H5L6 8zm3 3v2h6v-2H9z"/></svg>
+              </span>
+              <div>
+                <strong>Tônico ativador</strong>
+                <small>Foco na raiz para estimular crescimento e fortalecer.</small>
+              </div>
+            </li>
+            <li class="li">
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2c3.3 0 6 2.7 6 6 0 1.1-.3 2.2-.9 3.1L12 22 6.9 11.1C6.3 10.2 6 9.1 6 8c0-3.3 2.7-6 6-6zm0 3.2C10.2 5.2 8.8 6.6 8.8 8c0 .6.2 1.1.5 1.6L12 15.3l2.7-5.7c.3-.5.5-1 .5-1.6 0-1.4-1.4-2.8-3.2-2.8z"/></svg>
+              </span>
+              <div>
+                <strong>Máscara fortalecedora</strong>
+                <small>Tratamento para fios mais resistentes e com brilho.</small>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mini">
+          <h3>Para quem é indicado</h3>
+          <ul class="list">
+            <li class="li">
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M9.2 16.6 4.9 12.3l1.4-1.4 2.9 2.9 8-8 1.4 1.4z"/></svg>
+              </span>
+              Mulheres com <strong>queda</strong> e fios finos
+            </li>
+            <li class="li">
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M9.2 16.6 4.9 12.3l1.4-1.4 2.9 2.9 8-8 1.4 1.4z"/></svg>
+              </span>
+              Quem quer <strong>crescer o cabelo</strong> com saúde
+            </li>
+            <li class="li">
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M9.2 16.6 4.9 12.3l1.4-1.4 2.9 2.9 8-8 1.4 1.4z"/></svg>
+              </span>
+              Couro cabeludo <strong>oleoso</strong> ou desequilibrado
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <section class="section" id="como-usar" aria-label="Como usar e diferenciais">
+      <div class="grid3">
+        <div class="box">
+          <h4>🧴 Passo 1: Shampoo</h4>
+          <p>
+            Aplique no couro cabeludo, massageie por 1 a 2 minutos e enxágue.
+            Repita se necessário. O objetivo é preparar a raiz para receber o tratamento.
+          </p>
+        </div>
+        <div class="box">
+          <h4>💆‍♀️ Passo 2: Tônico</h4>
+          <p>
+            Com o couro cabeludo seco ou levemente úmido, aplique diretamente na raiz,
+            massageando suavemente. Use conforme orientação do atendimento.
+          </p>
+        </div>
+        <div class="box">
+          <h4>✨ Passo 3: Máscara</h4>
+          <p>
+            Aplique no comprimento e pontas, deixe agir por alguns minutos e enxágue.
+            Ideal para fortalecer e melhorar textura, brilho e resistência dos fios.
+          </p>
+        </div>
+      </div>
+
+      <div class="proof">
+        <div class="box">
+          <h4>📌 Por que essa rotina funciona?</h4>
+          <p>
+            Porque trata o cabelo como um ecossistema: couro cabeludo equilibrado, raiz estimulada e fios tratados.
+            O resultado tende a ser mais <strong>densidade</strong>, mais <strong>força</strong> e menos quebra.
+          </p>
+        </div>
+        <div class="box">
+          <h4>🎁 Oferta exclusiva</h4>
+          <p>
+            Garanta <strong>25% OFF</strong> e receba orientação para escolher o kit ideal para seu caso.
+            Clique no botão e fale no WhatsApp.
+          </p>
+          <div style="margin-top:14px;">
+            <a class="btn btn-primary" id="ctaMid" href="https://wa.me/558597004668?text=Oi%21%20Quero%20aproveitar%20os%2025%25%20OFF%20da%20Linha%20S.O.S%20Crescimento.%20Meu%20cabelo%20tem%20queda%2Foleosidade%2Fquebra.%20Qual%20kit%20voc%C3%AA%20me%20indica%3F" target="_blank" rel="noopener">
+              <span aria-hidden="true">💬</span>
+              Quero meu desconto no WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq" aria-label="Perguntas frequentes">
+        <details>
+          <summary>Em quanto tempo vejo resultados?</summary>
+          <p>
+            Depende da rotina e do organismo. Em geral, a consistência no uso e a combinação dos itens do tratamento
+            ajudam a perceber melhora na queda e na força dos fios ao longo das semanas.
+          </p>
+        </details>
+
+        <details>
+          <summary>Serve para cabelo com química?</summary>
+          <p>
+            Normalmente sim, pois o foco é fortalecer e equilibrar. Para uma indicação mais precisa, fale no WhatsApp e informe
+            seu tipo de química, frequência e estado do fio.
+          </p>
+        </details>
+
+        <details>
+          <summary>O produto resseca o cabelo?</summary>
+          <p>
+            A proposta é controlar oleosidade sem ressecar. Ainda assim, o uso correto e a combinação com máscara/rotina adequada
+            fazem toda a diferença. No WhatsApp você recebe orientação personalizada.
+          </p>
+        </details>
+
+        <details>
+          <summary>Como garantir o 25% OFF?</summary>
+          <p>
+            Clique em “Falar no WhatsApp”, informe que deseja a oferta de <strong>25% OFF</strong> e finalize com o atendimento.
+          </p>
+        </details>
+      </div>
+
+      <div class="card" style="margin-top:6px;">
+        <div class="card-inner" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;">
+          <div>
+            <div style="font-weight:900;font-size:18px;letter-spacing:-.2px;">Pronta para ver seu cabelo evoluir? ✨</div>
+            <div style="color:var(--muted);margin-top:4px;">Fale agora no WhatsApp e garanta <strong>25% OFF</strong>.</div>
+          </div>
+          <a class="btn btn-primary" id="ctaBottom" href="https://wa.me/558597004668?text=Oi%21%20Quero%20o%20desconto%20de%2025%25%20OFF%20na%20Linha%20S.O.S%20Crescimento.%20Pode%20me%20passar%20valores%20e%20formas%20de%20envio%3F" target="_blank" rel="noopener">
+            <span aria-hidden="true">📲</span>
+            Chamar no WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="footer">
+        <strong>Aviso:</strong> Este conteúdo tem finalidade informativa e não substitui avaliação profissional.
+        Em casos de queda intensa, persistente ou com falhas, procure um dermatologista/tricologista.
+      </div>
+    </section>
+  </div>
+
+  <!-- Sticky CTA (mobile) -->
+  <div class="sticky" aria-label="Barra fixa para WhatsApp">
+    <div class="bar">
+      <span><strong>25% OFF</strong> na Linha S.O.S Crescimento</span>
+      <a class="btn btn-primary" href="https://wa.me/558597004668?text=Oi%21%20Quero%20garantir%20os%2025%25%20OFF%20da%20Linha%20S.O.S%20Crescimento.%20Me%20ajuda%20com%20a%20indica%C3%A7%C3%A3o%20do%20kit%3F" target="_blank" rel="noopener">
+        <span aria-hidden="true">💬</span>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Simple CTA tracking (optional). No external scripts.
+    (function(){
+      const ctas = ["ctaTop","ctaMid","ctaBottom"].map(id => document.getElementById(id)).filter(Boolean);
+      ctas.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          try {
+            const now = new Date().toISOString();
+            localStorage.setItem("lp_sos_crescimento_last_click", now);
+          } catch (e) {}
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
