@@ -277,6 +277,19 @@
       background: rgba(47,189,119,.08);
       color: #1f7a4b;
       font-size: 13.5px;
+      display:grid;
+      gap:8px;
+    }
+    .auto-redirect button{
+      border-radius: 999px;
+      border: 1px solid rgba(47,189,119,.4);
+      background: rgba(255,255,255,.85);
+      color: #1f7a4b;
+      padding: 8px 12px;
+      font-weight: 600;
+      cursor:pointer;
+      font-size: 13px;
+      width: fit-content;
     }
 
     .proof{
@@ -417,7 +430,10 @@
             <strong>Frete grátis</strong> para todo Brasil.
           </div>
           <div class="auto-redirect">
-            Você será direcionada automaticamente para o WhatsApp em <strong><span id="countdown">10</span> segundos</strong>.
+            <div id="redirectStatus">
+              Você será direcionada automaticamente para o WhatsApp em <strong><span id="countdown">10</span> segundos</strong>.
+            </div>
+            <button type="button" id="disableRedirect">Desativar redirecionamento</button>
           </div>
         </div>
       </section>
@@ -659,6 +675,8 @@
       const ctas = ["ctaTop","ctaMid","ctaBottom"].map(id => document.getElementById(id)).filter(Boolean);
       const whatsappLink = document.querySelector("[data-whatsapp-link]");
       const whatsappUrl = whatsappLink ? whatsappLink.getAttribute("href") : "";
+      const disableButton = document.getElementById("disableRedirect");
+      const statusEl = document.getElementById("redirectStatus");
       ctas.forEach((btn) => {
         btn.addEventListener("click", () => {
           try {
@@ -667,7 +685,27 @@
           } catch (e) {}
         });
       });
-      if (whatsappUrl) {
+      if (disableButton) {
+        disableButton.addEventListener("click", () => {
+          try {
+            localStorage.setItem("lp_sos_disable_redirect", "true");
+          } catch (e) {}
+          if (statusEl) {
+            statusEl.textContent = "Redirecionamento automático desativado.";
+          }
+        });
+      }
+      const redirectDisabled = (() => {
+        try {
+          return localStorage.getItem("lp_sos_disable_redirect") === "true";
+        } catch (e) {
+          return false;
+        }
+      })();
+      if (redirectDisabled && statusEl) {
+        statusEl.textContent = "Redirecionamento automático desativado.";
+      }
+      if (whatsappUrl && !redirectDisabled) {
         const countdownEl = document.getElementById("countdown");
         let remaining = 10;
         if (countdownEl) {
