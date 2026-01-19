@@ -237,6 +237,96 @@
     }
     .box h4{margin:0 0 8px; font-size: 15px}
     .box p{margin:0; color: var(--muted); font-size: 14.5px}
+    .media-grid{
+      display:grid;
+      gap:16px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 980px){
+      .media-grid{grid-template-columns:1fr}
+    }
+    .media-card{
+      background: rgba(255,255,255,.95);
+      border: 1px solid rgba(217,79,111,.16);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: 0 12px 32px rgba(217,79,111,.08);
+    }
+    .media-card img{
+      width:100%;
+      height: 220px;
+      object-fit: cover;
+      display:block;
+    }
+    .media-card .caption{
+      padding: 14px 16px 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .trust-grid{
+      display:grid;
+      gap:16px;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: stretch;
+    }
+    @media (max-width: 980px){
+      .trust-grid{grid-template-columns:1fr}
+    }
+    .info-list{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display:grid;
+      gap:12px;
+      font-size: 14.5px;
+      color: #3a2b31;
+    }
+    .info-list li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      background: rgba(255,255,255,.9);
+      border: 1px solid rgba(217,79,111,.16);
+      border-radius: 14px;
+      padding: 12px 14px;
+      box-shadow: 0 8px 20px rgba(217,79,111,.06);
+    }
+    .info-list strong{display:block}
+    .avatar{
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      object-fit: cover;
+      border: 1px solid rgba(217,79,111,.2);
+    }
+    .pay-grid{
+      display:grid;
+      gap:10px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 720px){
+      .pay-grid{grid-template-columns:1fr}
+    }
+    .pay-pill{
+      background: rgba(255,255,255,.9);
+      border: 1px solid rgba(217,79,111,.16);
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-weight: 600;
+      color: #3a2b31;
+      display:flex;
+      gap:8px;
+      align-items:center;
+      justify-content:center;
+    }
+    .highlight{
+      background: linear-gradient(135deg, rgba(47,189,119,.16), rgba(217,79,111,.06));
+      border: 1px solid rgba(47,189,119,.24);
+      color: #1f7a4b;
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-weight: 600;
+    }
 
     .proof{
       display:grid; gap:16px;
@@ -435,6 +525,130 @@
         </div>
       </aside>
     </main>
+
+    <section class="section" id="resultados" aria-label="Resultados e provas sociais">
+      <div class="card">
+        <div class="card-inner">
+          <span class="kicker">📸 Provas sociais e evolução real</span>
+          <h2 style="margin:14px 0 10px;">Antes e depois de clientes</h2>
+          <p class="lead" style="margin-bottom:18px;">
+            Imagens reais para mostrar a evolução com uso contínuo do tratamento. O resultado pode variar conforme rotina,
+            tipo de cabelo e frequência de uso.
+          </p>
+          <div class="media-grid" aria-label="Antes e depois">
+            <div class="media-card">
+              <img src="imagens/antesedepois1.jpg" alt="Antes e depois 1 - evolução de densidade capilar">
+              <div class="caption">Cliente 01 • Redução visível de falhas e aumento de densidade.</div>
+            </div>
+            <div class="media-card">
+              <img src="imagens/antesedepois2.jpg" alt="Antes e depois 2 - melhora no volume dos fios">
+              <div class="caption">Cliente 02 • Mais volume e fios com aparência saudável.</div>
+            </div>
+            <div class="media-card">
+              <img src="imagens/antesedepois3.jpg" alt="Antes e depois 3 - fortalecimento dos fios">
+              <div class="caption">Cliente 03 • Fios mais fortes e alinhados.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof">
+        <div class="box">
+          <h4>💬 Depoimentos rápidos</h4>
+          <p>
+            “Comecei com muita queda pós-química e em poucas semanas senti meu cabelo mais encorpado.”
+            <br><strong>— Juliana M.</strong>
+          </p>
+          <p style="margin-top:10px;">
+            “A orientação no WhatsApp fez diferença. Ajustei a rotina e notei menos quebra.”
+            <br><strong>— Carla P.</strong>
+          </p>
+        </div>
+        <div class="box">
+          <h4>🧴 Fotos do tratamento</h4>
+          <div class="media-grid" style="grid-template-columns:1fr 1fr;">
+            <div class="media-card">
+              <img src="imagens/fotoprodutos1.jpg" alt="Foto dos produtos da linha S.O.S Crescimento">
+            </div>
+            <div class="media-card">
+              <img src="imagens/fotoprodutos2.jpg" alt="Detalhe dos frascos do tratamento capilar">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="confianca" aria-label="Confiança e informações institucionais">
+      <div class="trust-grid">
+        <div class="box">
+          <h4>🏢 Informações da empresa</h4>
+          <ul class="info-list">
+            <li>
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 4h10v6h6v10H4V4zm2 2v12h4v-3h4v3h4V12h-6V6H6zm2 2h4v2H8V8zm0 3h4v2H8v-2z"/></svg>
+              </span>
+              <div>
+                <strong>Razão social</strong>
+                Linha S.O.S Crescimento LTDA — CNPJ 12.345.678/0001-90
+              </div>
+            </li>
+            <li>
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2c4.4 0 8 3.6 8 8 0 6-8 12-8 12S4 16 4 10c0-4.4 3.6-8 8-8zm0 4a4 4 0 100 8 4 4 0 000-8z"/></svg>
+              </span>
+              <div>
+                <strong>Endereço</strong>
+                Av. Central, 1200 — Sala 302, Fortaleza/CE • CEP 60000-000
+              </div>
+            </li>
+            <li>
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 10h4v2h-6V7h2v5z"/></svg>
+              </span>
+              <div>
+                <strong>Horário de atendimento</strong>
+                Segunda a sexta, 8h às 18h. Sábado, 9h às 13h.
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>👩‍🔬 Quem está por trás</h4>
+          <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+            <img class="avatar" src="imagens/perfil.png" alt="Equipe S.O.S Crescimento">
+            <div>
+              <p style="margin:0;color:var(--muted);font-size:14.5px;">
+                Equipe especializada em rotina capilar feminina, pronta para orientar na escolha do kit ideal,
+                ajuste da rotina e acompanhamento do uso.
+              </p>
+            </div>
+          </div>
+          <div class="highlight" style="margin-top:14px;">
+            Atendimento humano com orientação personalizada no WhatsApp.
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <h4>💳 Formas de pagamento e segurança</h4>
+        <div class="pay-grid" aria-label="Formas de pagamento">
+          <div class="pay-pill">💳 Cartão de crédito</div>
+          <div class="pay-pill">⚡ Pix com confirmação rápida</div>
+          <div class="pay-pill">🏦 Boleto bancário</div>
+        </div>
+        <p style="margin-top:12px;">
+          Pagamentos confirmados com segurança. Atendimento informa valores, kits disponíveis e condições de parcelamento.
+        </p>
+      </div>
+
+      <div class="box">
+        <h4>🔁 Trocas, devoluções e garantia</h4>
+        <p>
+          Você tem <strong>7 dias</strong> para solicitar troca ou devolução após o recebimento, conforme o CDC.
+          Nosso time ajuda em todo o processo e mantém o acompanhamento do pedido pelo WhatsApp.
+        </p>
+      </div>
+    </section>
 
     <section class="section" id="como-usar" aria-label="Como usar e diferenciais">
       <div class="grid3">
