@@ -417,7 +417,7 @@
             <strong>Frete grátis</strong> para todo Brasil.
           </div>
           <div class="auto-redirect">
-            Você será direcionada automaticamente para o WhatsApp em até <strong>10 segundos</strong>.
+            Você será direcionada automaticamente para o WhatsApp em <strong><span id="countdown">10</span> segundos</strong>.
           </div>
         </div>
       </section>
@@ -521,13 +521,13 @@
           </p>
         </div>
         <div class="box">
-          <h4>🧴 Fotos do tratamento</h4>
+          <h4>🧴 Fotos do produto</h4>
           <div class="media-grid" style="grid-template-columns:1fr 1fr;">
             <div class="media-card">
               <img src="imagens/fotoprodutos1.jpg" alt="Foto dos produtos da linha S.O.S Crescimento">
             </div>
             <div class="media-card">
-              <img src="imagens/fotoprodutos2.jpg" alt="Detalhe dos frascos do tratamento capilar">
+              <img src="imagens/fotoprodutos2.jpg" alt="Detalhe dos frascos do produto capilar">
             </div>
           </div>
         </div>
@@ -668,9 +668,21 @@
         });
       });
       if (whatsappUrl) {
-        setTimeout(() => {
-          window.location.href = whatsappUrl;
-        }, 10000);
+        const countdownEl = document.getElementById("countdown");
+        let remaining = 10;
+        if (countdownEl) {
+          countdownEl.textContent = String(remaining);
+        }
+        const intervalId = setInterval(() => {
+          remaining -= 1;
+          if (countdownEl) {
+            countdownEl.textContent = String(Math.max(remaining, 0));
+          }
+          if (remaining <= 0) {
+            clearInterval(intervalId);
+            window.location.href = whatsappUrl;
+          }
+        }, 1000);
       }
     })();
   </script>
