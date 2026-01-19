@@ -237,6 +237,60 @@
     }
     .box h4{margin:0 0 8px; font-size: 15px}
     .box p{margin:0; color: var(--muted); font-size: 14.5px}
+    .media-grid{
+      display:grid;
+      gap:16px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 980px){
+      .media-grid{grid-template-columns:1fr}
+    }
+    .media-card{
+      background: rgba(255,255,255,.95);
+      border: 1px solid rgba(217,79,111,.16);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: 0 12px 32px rgba(217,79,111,.08);
+    }
+    .media-card img{
+      width:100%;
+      height: 220px;
+      object-fit: cover;
+      display:block;
+    }
+    .media-card .caption{
+      padding: 14px 16px 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .whatsapp-icon{
+      width: 18px;
+      height: 18px;
+      display:inline-block;
+      fill: currentColor;
+    }
+    .auto-redirect{
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px dashed rgba(47,189,119,.35);
+      background: rgba(47,189,119,.08);
+      color: #1f7a4b;
+      font-size: 13.5px;
+      display:grid;
+      gap:8px;
+    }
+    .auto-redirect button{
+      border-radius: 999px;
+      border: 1px solid rgba(47,189,119,.4);
+      background: rgba(255,255,255,.85);
+      color: #1f7a4b;
+      padding: 8px 12px;
+      font-weight: 600;
+      cursor:pointer;
+      font-size: 13px;
+      width: fit-content;
+    }
 
     .proof{
       display:grid; gap:16px;
@@ -359,8 +413,10 @@
           </div>
 
           <div class="ctaRow" aria-label="Chamadas para ação">
-            <a class="btn btn-primary" id="ctaTop" href="https://wa.me/558597004668?text=Oi%21%20Quero%20aproveitar%20os%2025%25%20OFF%20da%20Linha%20S.O.S%20Crescimento.%20Pode%20me%20ajudar%20a%20escolher%20o%20melhor%20kit%20para%20meu%20cabelo%3F" target="_blank" rel="noopener">
-              <span aria-hidden="true">📲</span>
+            <a class="btn btn-primary" id="ctaTop" data-whatsapp-link href="https://wa.me/558597004668?text=Oi%21%20Quero%20aproveitar%20os%2025%25%20OFF%20da%20Linha%20S.O.S%20Crescimento.%20Pode%20me%20ajudar%20a%20escolher%20o%20melhor%20kit%20para%20meu%20cabelo%3F" target="_blank" rel="noopener">
+              <svg class="whatsapp-icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M16.02 2.01C8.83 2.01 3 7.84 3 15.03c0 2.43.64 4.82 1.86 6.91L3 30l8.2-1.81a13 13 0 0 0 6.82 1.84h.01c7.19 0 13.02-5.83 13.02-13.02S23.21 2.01 16.02 2.01zm7.62 18.73c-.32.9-1.63 1.68-2.28 1.73-.6.05-1.36.07-2.2-.14-.51-.13-1.17-.38-2.03-.74-3.56-1.54-5.88-5.13-6.06-5.37-.18-.24-1.44-1.92-1.44-3.66s.92-2.6 1.25-2.96c.32-.36.7-.45.94-.45h.68c.22 0 .51-.08.79.6.32.77 1.08 2.67 1.17 2.86.09.19.15.41.03.66-.12.25-.18.41-.36.63-.18.22-.38.49-.54.66-.18.18-.36.38-.16.74.2.36.9 1.48 1.93 2.4 1.32 1.17 2.43 1.54 2.79 1.71.36.18.57.15.78-.09.21-.24.9-1.05 1.14-1.41.24-.36.48-.3.81-.18.33.12 2.07.97 2.43 1.14.36.18.6.27.69.42.09.15.09.87-.24 1.77z"/>
+              </svg>
               Falar no WhatsApp e garantir 25% OFF + frete grátis
             </a>
             <a class="btn btn-ghost" href="#como-usar">
@@ -372,6 +428,12 @@
           <div class="subnote">
             *Atendimento humano no WhatsApp. Você pode tirar dúvidas sobre queda, oleosidade, rotina e indicação do kit.
             <strong>Frete grátis</strong> para todo Brasil.
+          </div>
+          <div class="auto-redirect">
+            <div id="redirectStatus">
+              Você será direcionada automaticamente para o WhatsApp em <strong><span id="countdown">10</span> segundos</strong>.
+            </div>
+            <button type="button" id="disableRedirect">Desativar redirecionamento</button>
           </div>
         </div>
       </section>
@@ -436,6 +498,58 @@
       </aside>
     </main>
 
+    <section class="section" id="resultados" aria-label="Resultados e provas sociais">
+      <div class="card">
+        <div class="card-inner">
+          <span class="kicker">📸 Provas sociais e evolução real</span>
+          <h2 style="margin:14px 0 10px;">Antes e depois de clientes</h2>
+          <p class="lead" style="margin-bottom:18px;">
+            Imagens reais para mostrar a evolução com uso contínuo do tratamento. O resultado pode variar conforme rotina,
+            tipo de cabelo e frequência de uso.
+          </p>
+          <div class="media-grid" aria-label="Antes e depois">
+            <div class="media-card">
+              <img src="imagens/antesedepois1.jpg" alt="Antes e depois 1 - evolução de densidade capilar">
+              <div class="caption">Cliente 01 • Redução visível de falhas e aumento de densidade.</div>
+            </div>
+            <div class="media-card">
+              <img src="imagens/antesedepois2.jpg" alt="Antes e depois 2 - melhora no volume dos fios">
+              <div class="caption">Cliente 02 • Mais volume e fios com aparência saudável.</div>
+            </div>
+            <div class="media-card">
+              <img src="imagens/antesedepois3.jpg" alt="Antes e depois 3 - fortalecimento dos fios">
+              <div class="caption">Cliente 03 • Fios mais fortes e alinhados.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof">
+        <div class="box">
+          <h4>💬 Depoimentos rápidos</h4>
+          <p>
+            “Comecei com muita queda pós-química e em poucas semanas senti meu cabelo mais encorpado.”
+            <br><strong>— Juliana M.</strong>
+          </p>
+          <p style="margin-top:10px;">
+            “A orientação no WhatsApp fez diferença. Ajustei a rotina e notei menos quebra.”
+            <br><strong>— Carla P.</strong>
+          </p>
+        </div>
+        <div class="box">
+          <h4>🧴 Fotos do produto</h4>
+          <div class="media-grid" style="grid-template-columns:1fr 1fr;">
+            <div class="media-card">
+              <img src="imagens/fotoprodutos1.jpg" alt="Foto dos produtos da linha S.O.S Crescimento">
+            </div>
+            <div class="media-card">
+              <img src="imagens/fotoprodutos2.jpg" alt="Detalhe dos frascos do produto capilar">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="como-usar" aria-label="Como usar e diferenciais">
       <div class="grid3">
         <div class="box">
@@ -476,8 +590,10 @@
             Clique no botão e fale no WhatsApp.
           </p>
           <div style="margin-top:14px;">
-            <a class="btn btn-primary" id="ctaMid" href="https://wa.me/558597004668?text=Oi%21%20Quero%20aproveitar%20os%2025%25%20OFF%20da%20Linha%20S.O.S%20Crescimento.%20Meu%20cabelo%20tem%20queda%2Foleosidade%2Fquebra.%20Qual%20kit%20voc%C3%AA%20me%20indica%3F" target="_blank" rel="noopener">
-              <span aria-hidden="true">💬</span>
+            <a class="btn btn-primary" id="ctaMid" data-whatsapp-link href="https://wa.me/558597004668?text=Oi%21%20Quero%20aproveitar%20os%2025%25%20OFF%20da%20Linha%20S.O.S%20Crescimento.%20Meu%20cabelo%20tem%20queda%2Foleosidade%2Fquebra.%20Qual%20kit%20voc%C3%AA%20me%20indica%3F" target="_blank" rel="noopener">
+              <svg class="whatsapp-icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M16.02 2.01C8.83 2.01 3 7.84 3 15.03c0 2.43.64 4.82 1.86 6.91L3 30l8.2-1.81a13 13 0 0 0 6.82 1.84h.01c7.19 0 13.02-5.83 13.02-13.02S23.21 2.01 16.02 2.01zm7.62 18.73c-.32.9-1.63 1.68-2.28 1.73-.6.05-1.36.07-2.2-.14-.51-.13-1.17-.38-2.03-.74-3.56-1.54-5.88-5.13-6.06-5.37-.18-.24-1.44-1.92-1.44-3.66s.92-2.6 1.25-2.96c.32-.36.7-.45.94-.45h.68c.22 0 .51-.08.79.6.32.77 1.08 2.67 1.17 2.86.09.19.15.41.03.66-.12.25-.18.41-.36.63-.18.22-.38.49-.54.66-.18.18-.36.38-.16.74.2.36.9 1.48 1.93 2.4 1.32 1.17 2.43 1.54 2.79 1.71.36.18.57.15.78-.09.21-.24.9-1.05 1.14-1.41.24-.36.48-.3.81-.18.33.12 2.07.97 2.43 1.14.36.18.6.27.69.42.09.15.09.87-.24 1.77z"/>
+              </svg>
               Quero meu desconto + frete grátis
             </a>
           </div>
@@ -524,8 +640,10 @@
             <div style="font-weight:900;font-size:18px;letter-spacing:-.2px;">Pronta para ver seu cabelo evoluir? ✨</div>
             <div style="color:var(--muted);margin-top:4px;">Fale agora no WhatsApp e garanta <strong>25% OFF</strong> + <strong>frete grátis</strong>.</div>
           </div>
-          <a class="btn btn-primary" id="ctaBottom" href="https://wa.me/558597004668?text=Oi%21%20Quero%20o%20desconto%20de%2025%25%20OFF%20na%20Linha%20S.O.S%20Crescimento.%20Pode%20me%20passar%20valores%20e%20formas%20de%20envio%3F" target="_blank" rel="noopener">
-            <span aria-hidden="true">📲</span>
+          <a class="btn btn-primary" id="ctaBottom" data-whatsapp-link href="https://wa.me/558597004668?text=Oi%21%20Quero%20o%20desconto%20de%2025%25%20OFF%20na%20Linha%20S.O.S%20Crescimento.%20Pode%20me%20passar%20valores%20e%20formas%20de%20envio%3F" target="_blank" rel="noopener">
+            <svg class="whatsapp-icon" viewBox="0 0 32 32" aria-hidden="true">
+              <path d="M16.02 2.01C8.83 2.01 3 7.84 3 15.03c0 2.43.64 4.82 1.86 6.91L3 30l8.2-1.81a13 13 0 0 0 6.82 1.84h.01c7.19 0 13.02-5.83 13.02-13.02S23.21 2.01 16.02 2.01zm7.62 18.73c-.32.9-1.63 1.68-2.28 1.73-.6.05-1.36.07-2.2-.14-.51-.13-1.17-.38-2.03-.74-3.56-1.54-5.88-5.13-6.06-5.37-.18-.24-1.44-1.92-1.44-3.66s.92-2.6 1.25-2.96c.32-.36.7-.45.94-.45h.68c.22 0 .51-.08.79.6.32.77 1.08 2.67 1.17 2.86.09.19.15.41.03.66-.12.25-.18.41-.36.63-.18.22-.38.49-.54.66-.18.18-.36.38-.16.74.2.36.9 1.48 1.93 2.4 1.32 1.17 2.43 1.54 2.79 1.71.36.18.57.15.78-.09.21-.24.9-1.05 1.14-1.41.24-.36.48-.3.81-.18.33.12 2.07.97 2.43 1.14.36.18.6.27.69.42.09.15.09.87-.24 1.77z"/>
+            </svg>
             Chamar no WhatsApp agora
           </a>
         </div>
@@ -542,8 +660,10 @@
   <div class="sticky" aria-label="Barra fixa para WhatsApp">
     <div class="bar">
       <span><strong>25% OFF</strong> + <strong>frete grátis</strong> hoje</span>
-      <a class="btn btn-primary" href="https://wa.me/558597004668?text=Oi%21%20Quero%20garantir%20os%2025%25%20OFF%20da%20Linha%20S.O.S%20Crescimento.%20Me%20ajuda%20com%20a%20indica%C3%A7%C3%A3o%20do%20kit%3F" target="_blank" rel="noopener">
-        <span aria-hidden="true">💬</span>
+      <a class="btn btn-primary" data-whatsapp-link href="https://wa.me/558597004668?text=Oi%21%20Quero%20garantir%20os%2025%25%20OFF%20da%20Linha%20S.O.S%20Crescimento.%20Me%20ajuda%20com%20a%20indica%C3%A7%C3%A3o%20do%20kit%3F" target="_blank" rel="noopener">
+        <svg class="whatsapp-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16.02 2.01C8.83 2.01 3 7.84 3 15.03c0 2.43.64 4.82 1.86 6.91L3 30l8.2-1.81a13 13 0 0 0 6.82 1.84h.01c7.19 0 13.02-5.83 13.02-13.02S23.21 2.01 16.02 2.01zm7.62 18.73c-.32.9-1.63 1.68-2.28 1.73-.6.05-1.36.07-2.2-.14-.51-.13-1.17-.38-2.03-.74-3.56-1.54-5.88-5.13-6.06-5.37-.18-.24-1.44-1.92-1.44-3.66s.92-2.6 1.25-2.96c.32-.36.7-.45.94-.45h.68c.22 0 .51-.08.79.6.32.77 1.08 2.67 1.17 2.86.09.19.15.41.03.66-.12.25-.18.41-.36.63-.18.22-.38.49-.54.66-.18.18-.36.38-.16.74.2.36.9 1.48 1.93 2.4 1.32 1.17 2.43 1.54 2.79 1.71.36.18.57.15.78-.09.21-.24.9-1.05 1.14-1.41.24-.36.48-.3.81-.18.33.12 2.07.97 2.43 1.14.36.18.6.27.69.42.09.15.09.87-.24 1.77z"/>
+        </svg>
         WhatsApp
       </a>
     </div>
@@ -553,6 +673,10 @@
     // Simple CTA tracking (optional). No external scripts.
     (function(){
       const ctas = ["ctaTop","ctaMid","ctaBottom"].map(id => document.getElementById(id)).filter(Boolean);
+      const whatsappLink = document.querySelector("[data-whatsapp-link]");
+      const whatsappUrl = whatsappLink ? whatsappLink.getAttribute("href") : "";
+      const disableButton = document.getElementById("disableRedirect");
+      const statusEl = document.getElementById("redirectStatus");
       ctas.forEach((btn) => {
         btn.addEventListener("click", () => {
           try {
@@ -561,6 +685,43 @@
           } catch (e) {}
         });
       });
+      if (disableButton) {
+        disableButton.addEventListener("click", () => {
+          try {
+            localStorage.setItem("lp_sos_disable_redirect", "true");
+          } catch (e) {}
+          if (statusEl) {
+            statusEl.textContent = "Redirecionamento automático desativado.";
+          }
+        });
+      }
+      const redirectDisabled = (() => {
+        try {
+          return localStorage.getItem("lp_sos_disable_redirect") === "true";
+        } catch (e) {
+          return false;
+        }
+      })();
+      if (redirectDisabled && statusEl) {
+        statusEl.textContent = "Redirecionamento automático desativado.";
+      }
+      if (whatsappUrl && !redirectDisabled) {
+        const countdownEl = document.getElementById("countdown");
+        let remaining = 10;
+        if (countdownEl) {
+          countdownEl.textContent = String(remaining);
+        }
+        const intervalId = setInterval(() => {
+          remaining -= 1;
+          if (countdownEl) {
+            countdownEl.textContent = String(Math.max(remaining, 0));
+          }
+          if (remaining <= 0) {
+            clearInterval(intervalId);
+            window.location.href = whatsappUrl;
+          }
+        }, 1000);
+      }
     })();
   </script>
 </body>
