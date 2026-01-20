@@ -14,14 +14,14 @@
 
   <style>
     :root{
-      --bg:#fff5f7;
+      --bg:#fff0f0;
       --card:#ffffff;
       --soft:#ffe9ef;
       --text:#2b2224;
       --muted:#6f5c62;
-      --brand:#d94f6f;
-      --brand2:#f08aaa;
-      --ok:#d94f6f;
+      --brand:#c62828;
+      --brand2:#e53935;
+      --ok:#c62828;
       --line:rgba(217,79,111,.18);
       --shadow: 0 18px 60px rgba(217,79,111,.18);
       --radius: 20px;
@@ -255,7 +255,8 @@
     .media-card img{
       width:100%;
       height: 220px;
-      object-fit: cover;
+      object-fit: contain;
+      background: #fff;
       display:block;
     }
     .media-card .caption{
@@ -272,13 +273,14 @@
     .product-hero{
       border-radius: var(--radius);
       overflow: hidden;
-      border: 1px solid rgba(217,79,111,.18);
-      background: rgba(255,255,255,.9);
-      box-shadow: 0 12px 32px rgba(217,79,111,.12);
+      border: 1px solid rgba(217,79,111,.2);
+      background: rgba(255,255,255,.95);
+      box-shadow: 0 14px 36px rgba(217,79,111,.16);
     }
     .product-hero img{
       width: 100%;
-      height: 220px;
+      height: auto;
+      max-height: 260px;
       object-fit: cover;
       display: block;
     }
@@ -286,6 +288,20 @@
       padding: 12px 16px 16px;
       color: var(--muted);
       font-size: 14px;
+    }
+    .product-hero .fallback{
+      display: none;
+      padding: 16px;
+      font-size: 14px;
+      color: #a33e55;
+      border-top: 1px solid rgba(217,79,111,.2);
+      background: rgba(217,79,111,.06);
+    }
+    .product-hero.image-failed img{
+      display: none;
+    }
+    .product-hero.image-failed .fallback{
+      display: block;
     }
 
     .proof{
@@ -369,6 +385,11 @@
       <section class="card" aria-label="Oferta principal">
         <div class="card-inner">
           <span class="kicker">💖 Tratamento completo para queda e crescimento</span>
+          <div class="product-hero" aria-label="Imagem do kit S.O.S Crescimento">
+            <img src="imagens/fotoprodutos1.jpg" alt="Kit completo da linha S.O.S Crescimento" loading="eager" onerror="this.closest('.product-hero').classList.add('image-failed')">
+            <div class="caption">Kit completo da linha S.O.S Crescimento.</div>
+            <div class="fallback">Se a imagem não carregar, verifique sua conexão ou recarregue a página.</div>
+          </div>
           <h1>Menos queda, mais crescimento e volume para você se sentir ainda mais confiante ✨</h1>
           <p class="lead">
             A <strong>Linha S.O.S Crescimento</strong> foi criada para mulheres que buscam <strong>resultados reais</strong>:
