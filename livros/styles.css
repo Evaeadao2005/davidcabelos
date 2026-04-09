@@ -372,10 +372,13 @@ h3 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
-  align-items: end;
+  align-items: start;
 }
 
 .cover-card {
+  display: grid;
+  place-items: center;
+  align-self: start;
   padding: 12px;
   border-radius: calc(var(--radius-lg) + 6px);
   background: rgba(255, 255, 255, 0.94);
@@ -385,6 +388,9 @@ h3 {
 
 .cover-card img {
   width: 100%;
+  height: auto;
+  aspect-ratio: 683 / 1024;
+  object-fit: contain;
   border-radius: calc(var(--radius-lg) - 2px);
 }
 
@@ -532,17 +538,25 @@ h3 {
   display: grid;
   grid-template-columns: minmax(220px, 0.84fr) minmax(0, 1.16fr);
   gap: 24px;
+  align-items: start;
   padding: 28px;
   border-radius: calc(var(--radius-xl) + 2px);
 }
 
 .book-media {
+  justify-self: center;
+  align-self: start;
+  width: min(100%, 280px);
   padding: 12px;
   border-radius: var(--radius-lg);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 239, 233, 0.48));
 }
 
 .book-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 683 / 1024;
+  object-fit: contain;
   border-radius: calc(var(--radius-lg) - 2px);
 }
 
@@ -804,7 +818,7 @@ h3 {
   }
 
   .book-media {
-    max-width: 340px;
+    width: min(100%, 340px);
   }
 
   .section-heading h2,
